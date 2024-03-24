@@ -7,7 +7,7 @@ metadata:
 spec:
   prune: true
   interval: 4m0s
-  path: ./infrastructure/controlplane-0/terraform/controller
+  path: ./infrastructure/controlplane-0/opentofu/controller
   sourceRef:
     kind: GitRepository
     name: flux-system
@@ -31,7 +31,7 @@ metadata:
 spec:
   prune: true
   interval: 4m0s
-  path: ./infrastructure/controlplane-0/terraform/irsa/prod
+  path: ./infrastructure/controlplane-0/opentofu/irsa/prod
   postBuild:
     substituteFrom:
       - kind: ConfigMap
@@ -53,7 +53,7 @@ metadata:
 spec:
   prune: true
   interval: 4m0s
-  path: ./infrastructure/controlplane-0/terraform/aws-resources
+  path: ./infrastructure/controlplane-0/opentofu/aws-resources
   postBuild:
     substitute:
       domain_name: "cloud.ogenki.io"
@@ -90,7 +90,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: tf-irsa-controlplane-0
-    - name: tf-custom-resources
+    - name: tf-aws-resources
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -100,7 +100,7 @@ metadata:
 spec:
   prune: true
   interval: 4m0s
-  path: ./infrastructure/controlplane-0/terraform/irsa/dev
+  path: ./infrastructure/controlplane-0/opentofu/irsa/dev
   postBuild:
     substituteFrom:
       - kind: ConfigMap
@@ -112,5 +112,5 @@ spec:
     kind: GitRepository
     name: flux-system
   dependsOn:
-    - name: tf-custom-resources
+    - name: tf-aws-resources
     - name: tofu-controller

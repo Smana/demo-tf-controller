@@ -5,7 +5,9 @@ metadata:
   name: route53-zone-cloud
 spec:
   approvePlan: auto
+  breakTheGlass: true
   destroyResourcesOnDeletion: false # Keep the zone after deletion
+  storeReadablePlan: human
   interval: 8m
   path: ./modules/zones
   sourceRef:

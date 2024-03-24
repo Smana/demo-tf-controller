@@ -5,11 +5,12 @@ metadata:
 spec:
   approvePlan: auto
   destroyResourcesOnDeletion: true
+  storeReadablePlan: human
   interval: 8m
-  path: ./terraform/modules/eks
+  path: ./opentofu/eks
   sourceRef:
     kind: GitRepository
-    name: terraform-demo-tofu-controller
+    name: demo-tofu-controller
     namespace: flux-system
   vars:
     - name: cluster_name
