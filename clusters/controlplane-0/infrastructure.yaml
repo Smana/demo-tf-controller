@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: tf-controller
+  name: tofu-controller
   namespace: flux-system
 spec:
   prune: true
@@ -20,7 +20,7 @@ spec:
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta2
       kind: HelmRelease
-      name: tf-controller
+      name: tofu-controller
       namespace: flux-system
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -43,7 +43,7 @@ spec:
     kind: GitRepository
     name: flux-system
   dependsOn:
-    - name: tf-controller
+    - name: tofu-controller
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -67,7 +67,7 @@ spec:
     kind: GitRepository
     name: flux-system
   dependsOn:
-    - name: tf-controller
+    - name: tofu-controller
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -113,4 +113,4 @@ spec:
     name: flux-system
   dependsOn:
     - name: tf-custom-resources
-    - name: tf-controller
+    - name: tofu-controller

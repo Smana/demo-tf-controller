@@ -23,7 +23,7 @@ tailscale = {
 }
 
 tags = {
-  project = "demo-tf-controller"
+  project = "demo-tofu-controller"
   owner   = "Smana"
 }
 ```

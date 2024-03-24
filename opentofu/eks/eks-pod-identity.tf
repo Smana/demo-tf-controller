@@ -22,7 +22,7 @@ module "iam_role_tf_controller" {
     ]
     }
   )
-  role_name        = "tf-controller"
+  role_name        = "tofu-controller"
   role_description = "EKS Pod Identity Role for the tofu-controller"
 }
 

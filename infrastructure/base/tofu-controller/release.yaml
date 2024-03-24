@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: tf-controller
+  name: tofu-controller
   namespace: flux-system
 spec:
   chart:
@@ -9,9 +9,9 @@ spec:
       sourceRef:
         kind: GitRepository
         name: tofu-controller
-      chart: "./charts/tf-controller"
+      chart: "./charts/tofu-controller"
   interval: 1h0s
-  releaseName: tf-controller
+  releaseName: tofu-controller
   targetNamespace: flux-system
   install:
     crds: Create

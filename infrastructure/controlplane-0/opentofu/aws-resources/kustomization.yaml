@@ -6,4 +6,5 @@ resources:
   - acm
   - eks
   - sources
+  - route53-zone
   - vpc

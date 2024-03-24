@@ -9,7 +9,7 @@ spec:
   path: ./terraform/modules/eks
   sourceRef:
     kind: GitRepository
-    name: terraform-demo-tf-controller
+    name: terraform-demo-tofu-controller
     namespace: flux-system
   vars:
     - name: cluster_name

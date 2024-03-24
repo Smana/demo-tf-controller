@@ -21,10 +21,10 @@ cluster_name = "mycluster-0" # Generated with petname
 
 github_owner    = "Smana"
 github_token    = <REDACTED>
-repository_name = "demo-tf-controller"
+repository_name = "demo-tofu-controller"
 
 tags = {
-  GithubRepo = "demo-tf-controller"
+  GithubRepo = "demo-tofu-controller"
   GithubOrg  = "Smana"
 }
 ```
